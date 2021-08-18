@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myvaxxpass/Views/qr.dart';
 
 void main() {
   runApp(Enter());
@@ -9,8 +10,14 @@ class Enter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: null,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: QrCode(),
+      ),
     );
   }
 }
